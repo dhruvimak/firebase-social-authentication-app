@@ -1,0 +1,14 @@
+<div id="login-box-header">
+  <a class="nav-link" routerLinkActive="active" [routerLink]="['/home']" [routerLinkActiveOptions]="{exact: true}">Sign In</a>
+  <a class="nav-link" routerLinkActive="active" [routerLink]="[{ outlets: { welcomepage: ['signup'] } }]">Sign Up</a>
+</div>
+<router-outlet name="welcomepage"></router-outlet>
+
+<div class="or">OR</div>
+
+<div id="social">
+  <a class="facebookBtn smGlobalBtn" (click)="loginWithFacebook()"></a>
+  <a class="twitterBtn smGlobalBtn" (click)="loginWithTwitter()"></a>
+  <a class="googleplusBtn smGlobalBtn" (click)="loginWithGoogle()"></a>
+  <a class="githubBtn smGlobalBtn" (click)="loginWithGithub()"></a>
+</div>

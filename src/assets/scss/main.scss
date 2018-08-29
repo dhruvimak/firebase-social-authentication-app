@@ -1,0 +1,348 @@
+@import '_mobile';
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
+*:focus {
+  outline: none;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.form-control:focus {
+  box-shadow: none !important;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #DDD;
+  font-size: 16px;
+  color: #222;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+#login-box-header {
+  position: relative;
+  margin-top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  background: #FFF;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  display: inline-flex;
+  &>a,
+  &>a:visited {
+    flex: 1;
+    font-weight: 300;
+    font-size: 28px;
+    height: 60px;
+    color: #505260;
+  }
+  &>a.active {
+    font-weight: 400;
+    background: #d2d8d8;
+    color: #809191;
+  }
+  h2 {
+    margin: 0.25em 0 0.25em 0.25em;
+    font-weight: 400;
+    font-size: 28px;
+  }
+}
+
+#login-box {
+  position: relative;
+  margin-top: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  background: #FFF;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  .top {
+    padding: 40px;
+    width: 100%;
+    height: 320px;
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      display: block;
+      box-sizing: border-box;
+      margin-bottom: 25px;
+      padding: 4px;
+      height: 40px;
+      border: none;
+      border-bottom: 1px solid #AAA;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+      transition: 0.2s ease;
+    }
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="password"]:focus {
+      border-bottom: 2px solid #16a085 !important;
+      color: #16a085 !important;
+      transition: 0.2s ease;
+    }
+    input[type="submit"] {
+      margin-top: 35px;
+      width: 120px;
+      height: 32px;
+      background: #16a085;
+      border: none;
+      border-radius: 2px;
+      color: #FFF;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 500;
+      text-transform: uppercase;
+      transition: 0.1s ease;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover,
+    input[type="submit"]:focus {
+      opacity: 0.8;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+      transition: 0.1s ease;
+    }
+    input[type="submit"]:active {
+      opacity: 1;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+      transition: 0.1s ease;
+    }
+  }
+}
+
+.or {
+  position: relative;
+  margin-top: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  width: 40px;
+  height: 40px;
+  background: #DDD;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  line-height: 40px;
+  text-align: center;
+  &::after {
+    content: '';
+    position: absolute;
+    width: 170px;
+    top: 50%;
+    left: 110%;
+    border: 1px solid lighten($color: black, $amount: 70);
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    width: 170px;
+    top: 50%;
+    right: 110%;
+    border: 1px solid lighten($color: black, $amount: 70);
+  }
+}
+
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+#social {
+  position: relative;
+  margin-top: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  background: transparent;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.smGlobalBtn {
+  /* global button class */
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  border: 2px solid #ddd;
+  /* add border to the buttons */
+  box-shadow: 0 3px 3px #999;
+  padding: 0px;
+  text-decoration: none;
+  text-align: center;
+  color: #fff;
+  font-size: 27px;
+  font-weight: normal;
+  line-height: 60px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+}
+
+/* facebook button class*/
+
+.facebookBtn {
+  background: #4060A5;
+}
+
+.facebookBtn:before {
+  /* use :before to add the relevant icons */
+  font-family: "FontAwesome";
+  content: "\f09a";
+  /* add facebook icon */
+}
+
+.facebookBtn:hover {
+  color: #4060A5;
+  background: #fff;
+  border-color: #4060A5;
+  /* change the border color on mouse hover */
+}
+
+/* twitter button class*/
+
+.twitterBtn {
+  background: #00ABE3;
+}
+
+.twitterBtn:before {
+  font-family: "FontAwesome";
+  content: "\f099";
+  /* add twitter icon */
+}
+
+.twitterBtn:hover {
+  color: #00ABE3;
+  background: #fff;
+  border-color: #00ABE3;
+}
+
+/* google plus button class*/
+
+.googleplusBtn {
+  background: #e64522;
+}
+
+.googleplusBtn:before {
+  font-family: "FontAwesome";
+  content: "\f1a0";
+  /* add googleplus icon */
+}
+
+.googleplusBtn:hover {
+  color: #e64522;
+  background: #fff;
+  border-color: #e64522;
+}
+
+.githubBtn {
+  background: lighten(#000000, 50%);
+}
+
+.githubBtn:before {
+  font-family: "FontAwesome";
+  content: "\f09b";
+  /* add github icon */
+}
+
+.githubBtn:hover {
+  color: #000000;
+  background: #fff;
+  border-color: lighten(#000000, 50%);
+}
+
+// dashboard scss
+.dashboard {
+  width: 600px !important;
+}
+
+.logout {
+  position: absolute;
+  left: 95%;
+  top:-60%;
+  .logoutBtn {
+    background: #e64522;
+  }
+  .logoutBtn:before {
+    font-family: "FontAwesome";
+    content: "\f011";
+    /* add logout icon */
+  }
+  .logoutBtn:hover {
+    color: #e64522;
+    background: #fff;
+    border-color: #e64522;
+  }
+}
+
+.todolist{
+  height: auto !important;
+  min-height: 200px !important;
+  position: relative !important;
+
+  .smGlobalBtn2{
+    display: inline-block;
+    position: absolute;
+    top: 1em;
+    right: 5%;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #ddd;
+    /* add border to the buttons */
+    box-shadow: 0 3px 3px #999;
+    padding: 0px;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    font-size: 27px;
+    font-weight: normal;
+    line-height: 40px;
+    border-radius: 20%;
+    -moz-border-radius: 20%;
+    -webkit-border-radius: 20%;
+  }
+  .addBtn {
+    background:#15aabf;
+  }
+  .addBtn:before {
+    font-family: "FontAwesome";
+    content: "\f067";
+    /* add icon */
+  }
+  .addBtn:hover {
+    color: #15aabf;
+    background: #fff;
+    border-color: #15aabf;
+  }
+  .deleteBtn{
+    position: absolute;
+    display: inline-block;
+    cursor: pointer;
+    color: teal !important;
+    font-size: 25px;
+    right: 10%;
+  }
+  .deleteBtn:hover {
+    font-size: 27px;
+    transition: 0.2s ease;
+    font-weight: 500;
+  }
+
+  ul{
+    list-style-type:  decimal;
+    size: 27px;
+    font-weight: 400;
+    color: #222;  
+
+    li{
+      margin: 0.3em 0;
+      word-wrap: break-word;
+      line-height: 27px;
+      padding-right:3em; 
+    }
+  }
+  
+}

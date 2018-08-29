@@ -1,0 +1,12 @@
+<div id="login-box">
+  <div class="top">
+    <form #loginform="ngForm" name="userform">
+      <input type="email" class="form-control" id="InputEmail1" placeholder="Email" [(ngModel)]="user.email" name="email" required>
+      <input type="password" class="form-control" id="InputPassword1" placeholder="Password" [(ngModel)]="user.password" name="password"
+        required>
+      <input type="submit" class="btn btn-primary btn-block" style="margin-bottom: 20px" [disabled]="loginform.form.invalid" (click)="logInWithEmail()"
+        value="login" />
+    </form>
+  </div>
+
+</div>
