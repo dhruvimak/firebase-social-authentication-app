@@ -18,12 +18,13 @@ export class AuthService {
 
   authenticateUser() {
     this.user = this.auth.authState;
-    // track user activity
     this.user.subscribe(user => {
       if (user) {
         this.userDetails = user;
+        this.router.navigate(["dashboard"]);
       } else {
         this.userDetails = null;
+        this.router.navigate(["home"]);
       }
     });
   }

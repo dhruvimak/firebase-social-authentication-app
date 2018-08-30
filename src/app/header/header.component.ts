@@ -10,6 +10,8 @@ import { ProfileService } from '../services/profile.service';
 })
 export class HeaderComponent implements OnInit {
 
+  private theErrorString:string='';
+
   constructor(private authservice: AuthService,
     private router: Router,
     private profile: ProfileService) { }
@@ -24,7 +26,7 @@ export class HeaderComponent implements OnInit {
         if (res.additionalUserInfo.isNewUser) this.profile.createUser(res.user);
         else this.router.navigate(["dashboard"]);
       })
-      .catch(err => console.log(err));
+      .catch(err =>this.theErrorString=err.message);
   }
 
   loginWithGoogle() {
@@ -34,10 +36,9 @@ export class HeaderComponent implements OnInit {
        if (res.additionalUserInfo.isNewUser) this.profile.createUser(res.user);
         else {
           this.authservice.authenticateUser();
-          this.router.navigate(["dashboard"]);
         }
       })
-      .catch(err => console.log(err));
+      .catch(err =>this.theErrorString=err.message);
   }
 
   loginWithTwitter() {
@@ -47,7 +48,7 @@ export class HeaderComponent implements OnInit {
        if (res.additionalUserInfo.isNewUser) this.profile.createUser(res.user);
         else this.router.navigate(["dashboard"]);
       })
-      .catch(err => console.log(err));
+      .catch(err =>this.theErrorString=err.message);
   }
 
   loginWithGithub() {
@@ -57,6 +58,6 @@ export class HeaderComponent implements OnInit {
         if (res.additionalUserInfo.isNewUser) this.profile.createUser(res.user);
         else this.router.navigate(["dashboard"]);
       })
-      .catch(err => console.log(err));
+      .catch(err =>this.theErrorString=err.message);
   }
 }

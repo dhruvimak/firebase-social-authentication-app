@@ -1,5 +1,44 @@
-@import '_mobile';
+.section {
+  position: absolute;
+  width: 100%;
+  height: -webkit-fill-available;
+  top: 0;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -10;
+}
+
+.video-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.color-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  height: -webkit-fill-available;
+  background: lighten(black, 30%);
+  z-index: -1;
+}
+
+video{
+  height:-webkit-fill-available;
+}
+app-header {
+  z-index: 1;
+}
+
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
+
 *:focus {
   outline: none;
 }
@@ -33,19 +72,24 @@ body {
   border-radius: 2px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   display: inline-flex;
+
   &>a,
   &>a:visited {
     flex: 1;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 28px;
     height: 60px;
-    color: #505260;
-  }
-  &>a.active {
-    font-weight: 400;
-    background: #d2d8d8;
     color: #809191;
+    text-align: center;
   }
+
+  &>a.active {
+    font-weight: 500;
+    background: darken($color: #d2d8d8, $amount: 10%);
+    color: darken(#505260, 10%);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  }
+
   h2 {
     margin: 0.25em 0 0.25em 0.25em;
     font-weight: 400;
@@ -62,10 +106,12 @@ body {
   background: #FFF;
   border-radius: 2px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+
   .top {
     padding: 40px;
     width: 100%;
-    height: 320px;
+    height: auto;
+
     input[type="text"],
     input[type="email"],
     input[type="password"] {
@@ -81,6 +127,7 @@ body {
       font-size: 18px;
       transition: 0.2s ease;
     }
+
     input[type="text"]:focus,
     input[type="email"]:focus,
     input[type="password"]:focus {
@@ -88,11 +135,12 @@ body {
       color: #16a085 !important;
       transition: 0.2s ease;
     }
+
     input[type="submit"] {
       margin-top: 35px;
       width: 120px;
       height: 32px;
-      background: #16a085;
+      background: darken($color: #16a085, $amount: 10%);
       border: none;
       border-radius: 2px;
       color: #FFF;
@@ -101,19 +149,26 @@ body {
       text-transform: uppercase;
       transition: 0.1s ease;
       cursor: pointer;
+      opacity: 1;
     }
+
     input[type="submit"]:hover,
     input[type="submit"]:focus {
       opacity: 0.8;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
       transition: 0.1s ease;
     }
+
     input[type="submit"]:active {
       opacity: 1;
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
       transition: 0.1s ease;
     }
   }
+}
+
+input.ng-invalid.ng-touched {
+  border-bottom: 1px solid #e64522 !important;
 }
 
 .or {
@@ -129,6 +184,7 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   line-height: 40px;
   text-align: center;
+
   &::after {
     content: '';
     position: absolute;
@@ -137,6 +193,7 @@ body {
     left: 110%;
     border: 1px solid lighten($color: black, $amount: 70);
   }
+
   &::before {
     content: '';
     position: absolute;
@@ -147,7 +204,17 @@ body {
   }
 }
 
+.error {
+  h4 {
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 15px;
+    color: #b33e29;
+  }
+}
+
 @import url('//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
 #social {
   position: relative;
   margin-top: 2%;
@@ -182,7 +249,6 @@ body {
 }
 
 /* facebook button class*/
-
 .facebookBtn {
   background: #4060A5;
 }
@@ -202,7 +268,6 @@ body {
 }
 
 /* twitter button class*/
-
 .twitterBtn {
   background: #00ABE3;
 }
@@ -220,7 +285,6 @@ body {
 }
 
 /* google plus button class*/
-
 .googleplusBtn {
   background: #e64522;
 }
@@ -253,6 +317,14 @@ body {
   border-color: lighten(#000000, 50%);
 }
 
+.social-login-error {
+  h4 {
+    position: absolute;
+    left: 40%;
+    margin-top: -5%;
+  }
+}
+
 // dashboard scss
 .dashboard {
   width: 600px !important;
@@ -261,15 +333,18 @@ body {
 .logout {
   position: absolute;
   left: 95%;
-  top:-60%;
+  top: -60%;
+
   .logoutBtn {
     background: #e64522;
   }
+
   .logoutBtn:before {
     font-family: "FontAwesome";
     content: "\f011";
     /* add logout icon */
   }
+
   .logoutBtn:hover {
     color: #e64522;
     background: #fff;
@@ -277,12 +352,12 @@ body {
   }
 }
 
-.todolist{
+.todolist {
   height: auto !important;
   min-height: 200px !important;
   position: relative !important;
 
-  .smGlobalBtn2{
+  .smGlobalBtn2 {
     display: inline-block;
     position: absolute;
     top: 1em;
@@ -304,20 +379,24 @@ body {
     -moz-border-radius: 20%;
     -webkit-border-radius: 20%;
   }
+
   .addBtn {
-    background:#15aabf;
+    background: #15aabf;
   }
+
   .addBtn:before {
     font-family: "FontAwesome";
     content: "\f067";
     /* add icon */
   }
+
   .addBtn:hover {
     color: #15aabf;
     background: #fff;
     border-color: #15aabf;
   }
-  .deleteBtn{
+
+  .deleteBtn {
     position: absolute;
     display: inline-block;
     cursor: pointer;
@@ -325,24 +404,110 @@ body {
     font-size: 25px;
     right: 10%;
   }
+
   .deleteBtn:hover {
     font-size: 27px;
     transition: 0.2s ease;
     font-weight: 500;
   }
 
-  ul{
-    list-style-type:  decimal;
+  ul {
+    list-style-type: decimal;
     size: 27px;
     font-weight: 400;
-    color: #222;  
+    color: #222;
 
-    li{
+    li {
       margin: 0.3em 0;
       word-wrap: break-word;
       line-height: 27px;
-      padding-right:3em; 
+      padding-right: 3em;
+      font-weight: 500;
     }
   }
+}
+
+// @import '_mobile';
+@media screen and (max-width:500px) {
+  #login-box-header {
+    margin-top:30%;
+    width: 85% !important;
+    &>a,
+    &>a:visited {
+      font-size: 24px;
+    }
+    h2 {
+      font-size: 24px;
+    }
+  }
+
+  #login-box {
+    width: 85% !important;
+    margin-top: 10%;
+    
+    .top {
+      padding: 25px;
+      width: 100%;
+      height: auto;
+      padding-bottom: 4rem;
+
+      input[type="text"],
+      input[type="email"],
+      input[type="password"] {
+        height: 35px;
+        font-size: 16px;
+      }
+      input[type="submit"] {
+        margin-top: 20px;
+        height: 32px;
+        }  
+    }
+  }
+  .or {
+    margin-top: 5%;
+    width: 100%;
+    height: 35px;
+    width: 35px;
+    line-height: 35px;
+    
+    &::after {
+      content: '';
+      width: 120px;
+      }
+  
+    &::before {
+      content: '';
+      width: 120px;
+      }
+  }
+
+  #social {
+    margin-top: 10%;
+    width: 85%;
+    }
+  
+  .smGlobalBtn {
+    width: 50px;
+    height: 50px;
+   font-size: 23px;
+    line-height: 50px;
+    }
+    .social-login-error {
+      h4 {
+        left: 10%;
+        margin-top: -16%;
+      }
+    }
   
 }
+
+  @media screen and (max-width:768px) {
+    border: 2px solid green !important;
+    background: green;
+  }
+
+  @media screen and (min-width: 769px) and (max-width:1170px) {
+
+  }
+
+  @media screen and (min-width:1171px) {}

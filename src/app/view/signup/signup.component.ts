@@ -13,6 +13,7 @@ export class SignupComponent implements OnInit {
     password: "",
     displayName: ""
   };
+  error:string="";
 
   constructor(
     private authservice: AuthService,
@@ -30,6 +31,6 @@ export class SignupComponent implements OnInit {
           photoURL: ''
         }).then(response => this.profile.createUser(res.user));
       })
-      .catch(err => console.log(err));
+      .catch(err => this.error=err.message);
   }
 }

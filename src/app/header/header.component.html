@@ -3,6 +3,9 @@
   <a class="nav-link" routerLinkActive="active" [routerLink]="[{ outlets: { welcomepage: ['signup'] } }]">Sign Up</a>
 </div>
 <router-outlet name="welcomepage"></router-outlet>
+<div class="error social-login-error">
+  <h4 [innerText]="theErrorString"></h4>
+</div>
 
 <div class="or">OR</div>
 

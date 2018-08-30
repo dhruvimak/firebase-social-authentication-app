@@ -1,15 +1,50 @@
 <div id="login-box">
   <div class="top">
     <form #loginform="ngForm" name="userform">
-      <input type="email" class="form-control" id="InputEmail1" placeholder="Email" [(ngModel)]="user.email" name="email" required>
-      <input type="password" class="form-control" id="InputPassword" placeholder="Password" [(ngModel)]="user.password" name="password"
-        required>
-      <input type="text" class="form-control" id="InputeDisplayName" placeholder="Nick Name" [(ngModel)]="user.displayName" name="displayName"
-        required>
 
-      <input type="submit" class="btn btn-primary btn-block" style="margin-bottom: 20px" [disabled]="loginform.form.invalid" (click)="signUpWithEmail()"
-        value="SignUp" />
+      <input type="email" 
+          class="form-control" 
+          id="InputEmail1" 
+          placeholder="Email" 
+          [(ngModel)]="user.email"
+          #email="ngModel"
+          name="email"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+          required 
+          email>
+
+      <input type="password" 
+          class="form-control" 
+          id="InputPassword" 
+          placeholder="Password" 
+          [(ngModel)]="user.password"
+          name="password" 
+          #password="ngModel"
+          required 
+          minlength="8">
+      <input type="text" 
+          class="form-control" 
+          id="InputeDisplayName" 
+          placeholder="Nick Name" 
+          [(ngModel)]="user.displayName"
+          name="displayName" 
+          #displayName="ngModel"
+          required>
+      
+      <input type="submit" 
+          class="btn btn-primary btn-block" 
+          style="margin-bottom: 20px" 
+          [disabled]="!loginform.form.valid"
+          (click)="signUpWithEmail()" 
+          value="SignUp" />
+
+
     </form>
-  </div>
+    <div class="error">
+      <h4>{{ error }}</h4>
+      <h4 *ngIf="!email.valid && email.touched">Please enter a valid email!</h4>
+      <h4 *ngIf="!password.valid && password.touched">Please enter a valid password!</h4>
+      <h4 *ngIf="!displayName.valid && displayName.touched">Please enter a DisplayName!</h4>
+    </div>
 
-</div>
+  </div>

@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
     email: "",
     password: ""
   };
+  error:string='';
   
   constructor(
     private authservice: AuthService,
@@ -28,10 +29,6 @@ export class LoginComponent implements OnInit {
       .then(res => {
         this.router.navigate(["dashboard"]);
       })
-      .catch(err => console.log(err));
+      .catch(err => this.error=err.message);
   }
-
-
-
-
 }

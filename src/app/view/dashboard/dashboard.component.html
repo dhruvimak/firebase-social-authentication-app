@@ -8,9 +8,21 @@
 <div id="login-box" class="dashboard">
   <div class="top todolist">
     <form #todoForm="ngForm" name="todoForm">
-      <input type="text" class="form-control" id="todoItem" placeholder="todo Item" [(ngModel)]="todoItem" name="todoItem" required>
-      todoITEM: {{ todoItem }} 
-      <button type="submit" class="addBtn smGlobalBtn2 mt-0" style="margin-bottom: 20px" (click)="addTodo()"></button>
+
+      <input type="text" 
+          class="form-control" 
+          id="todoItem" 
+          placeholder="todo Item" 
+          [(ngModel)]="todoItem" 
+          name="todoItem"
+          required>
+
+      <button type="submit" 
+          class="addBtn smGlobalBtn2 mt-0" 
+          style="margin-bottom: 20px" 
+          (click)="addTodo()">
+      </button>
+
     </form>
 
     <ul>
@@ -21,8 +33,10 @@
         </a>
       </li>
     </ul>
-    <input type="submit" class="btn btn-primary btn-block" style="margin-bottom: 20px" (click)="deleteAll()" value="Delete All"
-    />
+    <input type="submit" 
+        class="btn btn-primary btn-block mb-0" 
+        (click)="deleteAll()" 
+        value="Delete All" />
   </div>
 
 </div>
