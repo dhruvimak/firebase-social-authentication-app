@@ -31,8 +31,9 @@
 }
 
 video{
-  height:-webkit-fill-available;
+  background-size: cover;
 }
+
 app-header {
   z-index: 1;
 }
@@ -502,8 +503,7 @@ input.ng-invalid.ng-touched {
 }
 
   @media screen and (max-width:768px) {
-    border: 2px solid green !important;
-    background: green;
+   
   }
 
   @media screen and (min-width: 769px) and (max-width:1170px) {

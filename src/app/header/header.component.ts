@@ -10,7 +10,7 @@ import { ProfileService } from '../services/profile.service';
 })
 export class HeaderComponent implements OnInit {
 
-  private theErrorString:string='';
+  public theErrorString:string='';
 
   constructor(private authservice: AuthService,
     private router: Router,
