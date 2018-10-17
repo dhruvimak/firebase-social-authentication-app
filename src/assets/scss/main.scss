@@ -1,3 +1,5 @@
+@import url(../node_modules/bootstrap/dist/css/bootstrap.min.css);
+@import url(../node_modules/font-awesome/css/font-awesome.min.css);
 .section {
   position: absolute;
   width: 100%;
@@ -6,16 +8,7 @@
   right: 0;
   left: 0;
   overflow: hidden;
-  z-index: -10;
-}
-
-.video-container {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  z-index: -1;
 }
 
 .color-overlay {
@@ -27,11 +20,20 @@
   width: 100vw;
   height: -webkit-fill-available;
   background: lighten(black, 30%);
-  z-index: -1;
+  z-index: 1;
+  opacity: 0.9;
 }
 
-video{
+img{
   background-size: cover;
+  background-size: cover;
+  min-height: 100%;
+  min-width: -webkit-fill-available;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 app-header {

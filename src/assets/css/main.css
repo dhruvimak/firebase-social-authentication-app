@@ -1,0 +1,126 @@
+@import url(../node_modules/bootstrap/dist/css/bootstrap.min.css);
+@import url(../node_modules/font-awesome/css/font-awesome.min.css);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+.section { position: absolute; width: 100%; height: -webkit-fill-available; top: 0; right: 0; left: 0; overflow: hidden; z-index: -1; }
+
+.color-overlay { position: absolute; top: 0; right: 0; left: 0; bottom: 0; width: 100vw; height: -webkit-fill-available; background: #4d4d4d; z-index: 1; opacity: 0.9; }
+
+img { background-size: cover; background-size: cover; min-height: 100%; min-width: -webkit-fill-available; width: 100%; height: auto; position: fixed; top: 0; left: 0; }
+
+app-header { z-index: 1; }
+
+*:focus { outline: none; }
+
+* { margin: 0; box-sizing: border-box; }
+
+.form-control:focus { box-shadow: none !important; }
+
+body { margin: 0; padding: 0; background: #DDD; font-size: 16px; color: #222; font-family: 'Roboto', sans-serif; font-weight: 300; }
+
+#login-box-header { position: relative; margin-top: 5%; left: 50%; transform: translateX(-50%); width: 400px; background: #FFF; border-radius: 2px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); display: inline-flex; }
+
+#login-box-header > a, #login-box-header > a:visited { flex: 1; font-weight: 400; font-size: 28px; height: 60px; color: #809191; text-align: center; }
+
+#login-box-header > a.active { font-weight: 500; background: #b7c0c0; color: #393a44; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); }
+
+#login-box-header h2 { margin: 0.25em 0 0.25em 0.25em; font-weight: 400; font-size: 28px; }
+
+#login-box { position: relative; margin-top: 2%; left: 50%; transform: translateX(-50%); width: 400px; background: #FFF; border-radius: 2px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); }
+
+#login-box .top { padding: 40px; width: 100%; height: auto; }
+
+#login-box .top input[type="text"], #login-box .top input[type="email"], #login-box .top input[type="password"] { display: block; box-sizing: border-box; margin-bottom: 25px; padding: 4px; height: 40px; border: none; border-bottom: 1px solid #AAA; font-family: 'Roboto', sans-serif; font-weight: 400; font-size: 18px; transition: 0.2s ease; }
+
+#login-box .top input[type="text"]:focus, #login-box .top input[type="email"]:focus, #login-box .top input[type="password"]:focus { border-bottom: 2px solid #16a085 !important; color: #16a085 !important; transition: 0.2s ease; }
+
+#login-box .top input[type="submit"] { margin-top: 35px; width: 120px; height: 32px; background: #107360; border: none; border-radius: 2px; color: #FFF; font-family: 'Roboto', sans-serif; font-weight: 500; text-transform: uppercase; transition: 0.1s ease; cursor: pointer; opacity: 1; }
+
+#login-box .top input[type="submit"]:hover, #login-box .top input[type="submit"]:focus { opacity: 0.8; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); transition: 0.1s ease; }
+
+#login-box .top input[type="submit"]:active { opacity: 1; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4); transition: 0.1s ease; }
+
+input.ng-invalid.ng-touched { border-bottom: 1px solid #e64522 !important; }
+
+.or { position: relative; margin-top: 2%; left: 50%; transform: translateX(-50%); width: 400px; width: 40px; height: 40px; background: #DDD; border-radius: 50%; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); line-height: 40px; text-align: center; }
+
+.or::after { content: ''; position: absolute; width: 170px; top: 50%; left: 110%; border: 1px solid #b3b3b3; }
+
+.or::before { content: ''; position: absolute; width: 170px; top: 50%; right: 110%; border: 1px solid #b3b3b3; }
+
+.error h4 { font-size: 14px; font-weight: 400; margin-top: 15px; color: #b33e29; }
+
+#social { position: relative; margin-top: 2%; left: 50%; transform: translateX(-50%); width: 400px; background: transparent; display: flex; justify-content: space-evenly; }
+
+.smGlobalBtn { /* global button class */ display: inline-block; position: relative; cursor: pointer; width: 60px; height: 60px; border: 2px solid #ddd; /* add border to the buttons */ box-shadow: 0 3px 3px #999; padding: 0px; text-decoration: none; text-align: center; color: #fff; font-size: 27px; font-weight: normal; line-height: 60px; border-radius: 50%; -moz-border-radius: 50%; -webkit-border-radius: 50%; }
+
+/* facebook button class*/
+.facebookBtn { background: #4060A5; }
+
+.facebookBtn:before { /* use :before to add the relevant icons */ font-family: "FontAwesome"; content: "\f09a"; /* add facebook icon */ }
+
+.facebookBtn:hover { color: #4060A5; background: #fff; border-color: #4060A5; /* change the border color on mouse hover */ }
+
+/* twitter button class*/
+.twitterBtn { background: #00ABE3; }
+
+.twitterBtn:before { font-family: "FontAwesome"; content: "\f099"; /* add twitter icon */ }
+
+.twitterBtn:hover { color: #00ABE3; background: #fff; border-color: #00ABE3; }
+
+/* google plus button class*/
+.googleplusBtn { background: #e64522; }
+
+.googleplusBtn:before { font-family: "FontAwesome"; content: "\f1a0"; /* add googleplus icon */ }
+
+.googleplusBtn:hover { color: #e64522; background: #fff; border-color: #e64522; }
+
+.githubBtn { background: gray; }
+
+.githubBtn:before { font-family: "FontAwesome"; content: "\f09b"; /* add github icon */ }
+
+.githubBtn:hover { color: #000000; background: #fff; border-color: gray; }
+
+.social-login-error h4 { position: absolute; left: 40%; margin-top: -5%; }
+
+.dashboard { width: 600px !important; }
+
+.logout { position: absolute; left: 95%; top: -60%; }
+
+.logout .logoutBtn { background: #e64522; }
+
+.logout .logoutBtn:before { font-family: "FontAwesome"; content: "\f011"; /* add logout icon */ }
+
+.logout .logoutBtn:hover { color: #e64522; background: #fff; border-color: #e64522; }
+
+.todolist { height: auto !important; min-height: 200px !important; position: relative !important; }
+
+.todolist .smGlobalBtn2 { display: inline-block; position: absolute; top: 1em; right: 5%; cursor: pointer; width: 40px; height: 40px; border: 2px solid #ddd; /* add border to the buttons */ box-shadow: 0 3px 3px #999; padding: 0px; text-decoration: none; text-align: center; color: #fff; font-size: 27px; font-weight: normal; line-height: 40px; border-radius: 20%; -moz-border-radius: 20%; -webkit-border-radius: 20%; }
+
+.todolist .addBtn { background: #15aabf; }
+
+.todolist .addBtn:before { font-family: "FontAwesome"; content: "\f067"; /* add icon */ }
+
+.todolist .addBtn:hover { color: #15aabf; background: #fff; border-color: #15aabf; }
+
+.todolist .deleteBtn { position: absolute; display: inline-block; cursor: pointer; color: teal !important; font-size: 25px; right: 10%; }
+
+.todolist .deleteBtn:hover { font-size: 27px; transition: 0.2s ease; font-weight: 500; }
+
+.todolist ul { list-style-type: decimal; size: 27px; font-weight: 400; color: #222; }
+
+.todolist ul li { margin: 0.3em 0; word-wrap: break-word; line-height: 27px; padding-right: 3em; font-weight: 500; }
+
+@media screen and (max-width: 500px) { #login-box-header { margin-top: 30%; width: 85% !important; }
+  #login-box-header > a, #login-box-header > a:visited { font-size: 24px; }
+  #login-box-header h2 { font-size: 24px; }
+  #login-box { width: 85% !important; margin-top: 10%; }
+  #login-box .top { padding: 25px; width: 100%; height: auto; padding-bottom: 4rem; }
+  #login-box .top input[type="text"], #login-box .top input[type="email"], #login-box .top input[type="password"] { height: 35px; font-size: 16px; }
+  #login-box .top input[type="submit"] { margin-top: 20px; height: 32px; }
+  .or { margin-top: 5%; width: 100%; height: 35px; width: 35px; line-height: 35px; }
+  .or::after { content: ''; width: 120px; }
+  .or::before { content: ''; width: 120px; }
+  #social { margin-top: 10%; width: 85%; }
+  .smGlobalBtn { width: 50px; height: 50px; font-size: 23px; line-height: 50px; }
+  .social-login-error h4 { left: 10%; margin-top: -16%; } }
